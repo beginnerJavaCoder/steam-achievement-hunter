@@ -11,6 +11,7 @@ public class WallpaperChanger {
     }
 
     private interface User32 extends Library {
+
         User32 INSTANCE = Native.load("user32", User32.class, W32APIOptions.DEFAULT_OPTIONS);
 
         boolean SystemParametersInfo(int uiAction, int uiParam, String pvParam, int fWinIni);
