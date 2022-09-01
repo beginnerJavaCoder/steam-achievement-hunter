@@ -42,22 +42,22 @@ public class ApiCall {
         return call(uri);
     }
 
-    public byte[] getSchemaForGame(String appId) {
-        String url = "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v0002/?key=%s&appid=%s";
+    public byte[] getSchemaForGame(Integer appId) {
+        String url = "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v0002/?key=%s&appid=%d";
         URI uri = URI.create(String.format(url, credentialsManager.getKey(), appId));
 
         return call(uri);
     }
 
-    public byte[] getGlobalAchievementPercentagesForApp(String appId) {
-        String url = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=%s";
+    public byte[] getGlobalAchievementPercentagesForApp(Integer appId) {
+        String url = "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=%d";
         URI uri = URI.create(String.format(url, appId));
 
         return call(uri);
     }
 
-    public byte[] getPlayerAchievements(String appId) {
-        String url = "https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?key=%s&steamid=%s&appid=%s";
+    public byte[] getPlayerAchievements(Integer appId) {
+        String url = "https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?key=%s&steamid=%s&appid=%d";
         URI uri = URI.create(String.format(url, credentialsManager.getKey(), credentialsManager.getSteamId(), appId));
 
         return call(uri);
